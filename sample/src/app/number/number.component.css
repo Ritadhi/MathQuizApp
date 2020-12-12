@@ -1,0 +1,29 @@
+.mat-form-field {
+    margin-top: 16px;
+  }
+
+.img-circle {
+    border-radius: 64px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -50px;
+    margin-left: -250px;
+    width: auto;
+}
+
+.inline-div {
+  display: block;
+  text-align: center;
+}
+  
+h6 {
+  text-align: start;
+  font-size: 15px;  
+  display: inline-block;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: 170px;
+}

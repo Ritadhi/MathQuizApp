@@ -1,0 +1,75 @@
+<div class="row mt-5 mb-5" >
+        <div class="col-sm-4">
+          <div class="card text-blank" style="border: none;">
+            <div class="card-body">
+              <div class="card-title text-center">
+                <h1>Profile</h1>
+              </div>
+              <hr/>
+              <div class="card-text">
+                
+                  <div class="offset-sm-2 col-sm-4 text-center">
+                    <img [src]="photo" height="128" width="128" class="img-circle">
+                  </div>
+      
+      
+                
+              </div>
+            </div>
+          </div>
+      
+          <div class="card text-blank" style="border: none;">
+            <div class="card-body">
+              <div class="card-title">
+                <h2>{{ name }}</h2>
+      
+                <h3>{{ email }}</h3>
+      
+                <h5>Progress Status</h5>
+      
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">50%</div>
+                </div>
+      
+              </div>
+              <div class="form-group " style="color:white">
+                <button type="button" class="btn btn-danger" style="margin: 30px;" (click)="ask()">Home</button>
+                <a class="btn btn-warning " type="button" style="margin: 30px;" (click)="logout()">Log Out</a>
+                
+              </div>
+              
+            </div>
+            
+          </div>
+          <div>
+            
+          </div>
+      
+          
+        </div>
+      
+        <div class="col-sm-8" style="margin-top:0; padding:20px; background-color:#eff0f2;border-radius:15px;
+        -webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+        -moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+        box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);">
+          <h1>Ask Here</h1>
+          <form [formGroup]="askForm">
+                <div class="form-group">
+                    <label for="exampleInputAsk"></label>
+                    <textarea formControlName="ask" type="ask" class="form-control" id="exampleInputAsk" rows="8" aria-describedby="askHelp" placeholder="Enter ask"></textarea>
+                    <small id="askHelp" class="form-text text-muted"></small>
+                </div>
+                <div>
+                    <input type="file">
+                </div>
+                <div>
+                    <button type="button" class="btn btn-success mt-3" (click)="upload()">Upload</button>
+                </div>
+                <div class="form-group" style="text-align: end;">
+                    <button type="button" class="btn btn-primary" [disabled]="!askForm.valid" (click)="askTutor()">Ask Tutor</button>
+                </div>
+                <div class="alert alert-warning text-center" *ngIf="showThanks">Thanks for asking. We will get back to you soon.</div>
+          </form>
+            
+        </div>
+      </div>

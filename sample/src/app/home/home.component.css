@@ -1,0 +1,25 @@
+.img-circle {
+    border-radius: 64px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -50px;
+    margin-left: -250px;
+    width: auto;
+}
+
+.inline-div {
+    display: block;
+    text-align: center;
+}
+    
+h6 {
+    text-align: start;
+    font-size: 15px;  
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 150px;
+}

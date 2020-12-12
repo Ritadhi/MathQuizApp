@@ -1,0 +1,182 @@
+
+
+
+<div class="row mt-5 mb-5" >
+        <div class="col-sm-4">
+          <div class="card text-blank" style="border: none;">
+            <div class="card-body">
+              <div class="card-title text-center">
+                <h1>Profile</h1>
+              </div>
+              <hr/>
+              <div class="card-text">
+                
+                <div class="offset-sm-2 col-sm-4 text-center">
+                    <img [src]="photo" height="128" width="128" class="img-circle">
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <div class="card text-blank" style="border: none;">
+            <div class="card-body">
+              <div class="card-title">
+                <h2>{{ name }}</h2>
+      
+                <h3>{{ email }}</h3>
+      
+                <h5>Progress Status</h5>
+      
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">50%</div>
+                </div>
+      
+              </div>
+              <div class="form-group " style="color:white">
+                <button type="button" class="btn btn-danger" style="margin: 30px;" (click)="home()">Home</button>
+                <a class="btn btn-warning " type="button" style="margin: 30px;" (click)="logout()">Log Out</a>
+                
+              </div>
+              
+            </div>
+            
+          </div>
+          <div>
+            
+          </div>
+      
+          
+        </div>
+        <div class="col-sm-8">
+                <div class="inline-div">
+                    <h6 style="color: blue;">Geometry</h6>
+                    <h6>Arithmetic</h6>
+                    <h6>Algebra</h6>
+        </div>
+        <div class="inline-div">           
+                    <h6>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%; background-color: grey;">25%</div>
+                        </div>
+                    </h6>
+                    <h6>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%; background-color: grey;">40%</div>
+                        </div>
+                    </h6>
+                    <h6>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%; background-color: grey;">65%</div>
+                        </div>
+                    </h6>
+                    
+          </div>
+                      
+        <div  style="margin-top:0; padding:20px; background-color:#eff0f2;border-radius:15px;
+        -webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+        -moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+        box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);">
+        <h1>NUMBERS</h1>
+        <mat-horizontal-stepper labelPosition="bottom" #stepper>
+            <mat-step [stepControl]="firstFormGroup">
+              <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>Q.1</ng-template>
+                <h2>What is the minimum integer value of side BC of a triangle ABC if side AB equals 6 and AC equals 11 ?</h2>
+                <mat-form-field>
+                  <mat-label>Answer</mat-label>
+                  <input matInput placeholder="Your Answer" formControlName="firstCtrl">
+                </mat-form-field>
+                <div>
+                  <button type="button" class="btn btn-warning" style="margin-right: 50px; color: white;" (click)="hint001()">Hint</button>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+              <div class="alert alert-warning text-center mt-5" *ngIf="hintFirst">Hint of Question 1 here !!!</div>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup">
+              <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>Q.2</ng-template>
+                <h2>What is the integer value of hypotenuse of a right angle triange of side 3 and 4 ?</h2>
+                <mat-form-field>
+                  <mat-label>Answer</mat-label>
+                  <input matInput formControlName="secondCtrl" placeholder="Your Answer">
+                </mat-form-field>
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button type="button" class="btn btn-warning" style="margin-right: 50px; margin-left: 50px; color: white;" (click)="hint002()">Hint</button>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+              <div class="alert alert-warning text-center mt-5" *ngIf="hintSecond">Hint of Question 2 here !!!</div>
+            </mat-step>
+            <mat-step [stepControl]="thirdFormGroup">
+                    <form [formGroup]="thirdFormGroup">
+                          <ng-template matStepLabel>Q.3</ng-template>
+                          <h2>What is the integer value of the perimeter of a square with side of length 5 unit ?</h2>
+                          <mat-form-field>
+                            <mat-label>Answer</mat-label>
+                            <input matInput formControlName="thirdCtrl" placeholder="Your Answer">
+                          </mat-form-field>
+                          <div>
+                            <button mat-button matStepperPrevious>Back</button>
+                            <button type="button" class="btn btn-warning" style="margin-right: 50px; margin-left: 50px; color: white;" (click)="hint003()">Hint</button>
+                            <button mat-button matStepperNext>Next</button>
+                          </div>
+                    </form>
+                        <div class="alert alert-warning text-center mt-5" *ngIf="hintThird">Hint of Question 3 here !!!</div>
+                </mat-step>
+                <mat-step [stepControl]="fourthFormGroup">
+                        <form [formGroup]="fourthFormGroup">
+                          <ng-template matStepLabel>Q.4</ng-template>
+                          <h2>What is the integer value of the area of a triangle with hypotenuse 5 unit and base 3 unit ?</h2>
+                          <mat-form-field>
+                            <mat-label>Answer</mat-label>
+                            <input matInput formControlName="fourthCtrl" placeholder="Your Answer">
+                          </mat-form-field>
+                          <div>
+                            <button mat-button matStepperPrevious>Back</button>
+                            <button type="button" class="btn btn-warning" style="margin-right: 50px; margin-left: 50px; color: white;" (click)="hint004()">Hint</button>
+                            <button mat-button matStepperNext>Next</button>
+                          </div>
+                        </form>
+                        <div class="alert alert-warning text-center mt-5" *ngIf="hintFourth">Hint of Question 4 here !!!</div>
+                </mat-step>
+                <mat-step [stepControl]="fifthFormGroup">
+                        <form [formGroup]="fifthFormGroup">
+                          <ng-template matStepLabel>Q.5</ng-template>
+                          <h2>What is the integer value of circumference of a circle with diameter 7 unit ?</h2>
+                          <mat-form-field>
+                            <mat-label>Answer</mat-label>
+                            <input matInput formControlName="fifthCtrl" placeholder="Your Answer">
+                          </mat-form-field>
+                          <div>
+                            <button mat-button matStepperPrevious>Back</button>
+                            <button type="button" class="btn btn-warning" style="margin-right: 50px; margin-left: 50px; color: white;" (click)="hint005()">Hint</button>
+                            <button mat-button matStepperNext>Next</button>
+                          </div>
+                        </form>
+                        <div class="alert alert-warning text-center mt-5" *ngIf="hintFifth">Hint of Question 5 here !!!</div>
+                </mat-step>
+ 
+            <mat-step>
+              <ng-template matStepLabel>View Result</ng-template>
+              <h2>Click Submit Button to view your Score</h2>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button class="bg-danger" (click)="stepper.reset()">Reset</button>
+                <button type="button" class="btn btn-success" style="margin-left: 50px;" (click)="submit()">Submit</button>
+              </div>
+              <div class="progress mt-5"  *ngIf="viewScore">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="score" aria-valuemin="0" aria-valuemax="100" style="width: {{prog}}">Score {{score}}%</div>
+                </div>
+              <div class="alert alert-success text-center mt-5" *ngIf="viewScore">Your Score is {{score}}%.</div>
+            </mat-step>
+          </mat-horizontal-stepper>
+
+          <p class="lead" style="text-align: end;">
+            <button type="button" class="btn btn-link btn-sm" (click)="help()">Get Help!!!</button>  
+          </p>
+        
+        </div>
+        </div>
+      </div>

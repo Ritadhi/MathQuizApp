@@ -1,0 +1,11 @@
+.img-circle {
+    border-radius: 64px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -50px;
+    margin-left: -250px;
+    width: auto;
+}
